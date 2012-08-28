@@ -1,0 +1,27 @@
+#random{
+    color:gray;
+    padding:5px;
+	display: block;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid gray;
+    -moz-border-radius: 3px;
+     border-radius: 3px;
+}
+
+#info{
+	display: block;
+}
+
+#game-info{
+	margin-bottom:5px;
+	margin-top: 5px;
+}
+
+#parties{margin-top: 5px;}
+
+#correct, .correct{color:green;}
+#wrong, .wrong{color:red;}
+
+#game-footer{
+	position:absolute;bottom:0;
+}

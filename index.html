@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<!--
+******************************************************************
+* GissaParti alfa 0.01
+* 
+**********
+-->
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8" />
+		<title>Gissa Parti</title>
+		<!-- js-libs -->
+		<script src="assets/libs/phonegap-1.4.1.js"></script>
+		<script src="assets/libs/jquery.js"></script>
+		<script src="assets/libs/jquery.shuffle.js"></script>
+		<script src="assets/libs/jquery.mobile-1.0.1/jquery.mobile-1.0.1.min.js"></script>
+
+		<!-- mobile theme -->
+		<link rel="stylesheet" type="text/css" href="assets/libs/jquery.mobile-1.0.1/jquery.mobile-1.0.1.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/libs/jquery.mobile-1.0.1/jquery.mobile.structure-1.0.1.min.css">
+
+		<!-- game logic -->
+		<script src="assets/js/game.js"></script>
+		<!-- game specific styles-->
+		<link rel="stylesheet" type="text/css" href="assets/css/gissaparti.css">
+	</head>
+		<body>
+		<div data-role="page">
+			<div data-role="header">
+				<h1>Gissa Parti</h1>
+			</div>
+			<div data-role="content">
+				<p id="game-info">Vilket parti kommer denna mening ifrån?</p>
+				<div id="game-content">
+					<p id="random"></p>
+					<ul data-role="listview" data-theme="a" id="parties"></ul>
+				</div>
+				<p id="info"></p>
+			</div>
+			<div data-position="fixed" data-role="footer"> 
+				<h4><strong id="correct">0</strong> rätt, <strong id="wrong">0</strong> fel</h4> 
+			</div> 
+		</div>
+	</body>
+</html>
