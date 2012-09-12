@@ -1,27 +1,27 @@
 //List of parties
 var par = {
-	    "all": 	"Alliansen",
-	    "c": 	"Centerpartiet",
-	    "rg": 	"De r&ouml;dgr&ouml;na",
-	    "fi": 	"Feministiskt initiativ",
-	    "fp": 	"Folkpartiet",
-	    "jr": 	"Jordbrukarnas riksf&ouml;rbund",
-	    "kd": 	"Kristdemokraterna",
-	    "la": 	"Lantmannapartiet",
-	    "labp": "Lantmanna- och borgarepartiet",
-	    "lisp": "Liberala samlingspartiet",
-	    "mp": 	"Milj&ouml;partiet",
-	    "m": 	"Moderaterna",
-	    "npf": 	"Nationella framstegspartiet",
-	    "nyd": 	"Ny demokrati",
-	    "pp": 	"Piratpartiet",
-	    "sd": 	"Sverigedemokraterna",
-	    "k_h": 	"Sveriges kommunistiska parti, H&ouml;glundarna",
-	    "k_k": 	"Sverges kommunistiska parti, Kilbommarna",
-	    "svp": 	"Sverges socialdemokratiska v&auml;nsterparti",
-	    "lp": 	"Sveriges liberala parti",
-	    "s": 	"Socialdemokraterna",
-	    "v": 	"V&auml;nsterpartiet"
+    "all":  "Alliansen",
+    "c":    "Centerpartiet",
+    "rg":   "De r&ouml;dgr&ouml;na",
+    "fi":   "Feministiskt initiativ",
+    "fp":   "Folkpartiet",
+    "jr":   "Jordbrukarnas riksf&ouml;rbund",
+    "kd":   "Kristdemokraterna",
+    "la":   "Lantmannapartiet",
+    "labp": "Lantmanna- och borgarepartiet",
+    "lisp": "Liberala samlingspartiet",
+    "mp":   "Milj&ouml;partiet",
+    "m":    "Moderaterna",
+    "npf":  "Nationella framstegspartiet",
+    "nyd":  "Ny demokrati",
+    "pp":   "Piratpartiet",
+    "sd":   "Sverigedemokraterna",
+    "k_h":  "Sveriges kommunistiska parti, H&ouml;glundarna",
+    "k_k":  "Sverges kommunistiska parti, Kilbommarna",
+    "svp":  "Sverges socialdemokratiska v&auml;nsterparti",
+    "lp":   "Sveriges liberala parti",
+    "s":    "Socialdemokraterna",
+    "v":    "V&auml;nsterpartiet"
 };
 
 var korp_url = "http://demosb.spraakdata.gu.se/cgi-bin/korp/korp.cgi?callback=?";
@@ -45,9 +45,9 @@ function generatePartyButtons() {
     var tmp;
     
     if ($("#" + current_party.text_party).length ) {
-    	tmp = $("#" + current_party.text_party).parent();
+        tmp = $("#" + current_party.text_party).parent();
     }else{
-    	tmp = '<li class="party_item"><a class="p_button" id="' + current_party.text_party + '">' + current_party.text_party + '</a></li>';
+        tmp = '<li class="party_item"><a class="p_button" id="' + current_party.text_party + '">' + current_party.text_party + '</a></li>';
     }
 
     $("#" + current_party.text_party).parent().remove();
@@ -98,7 +98,7 @@ function loadSentence(num) {
 
 // recive the data and render
 function corpus_results(data) {
-    if (current == 0) {
+    if (current === 0) {
         num_result = data.hits;
         var num = Math.floor(Math.random() * num_result) + 1;
         current = num;
@@ -121,7 +121,7 @@ function corpus_results(data) {
         else korp_sentence += ' ' + val.word;
     });
 
-    $("#random").html(korp_sentence).hide().fadeIn("fast");;
+    $("#random").html(korp_sentence).hide().fadeIn("fast");
     current_party = data.kwic[0].structs;
     generatePartyButtons();
 }
