@@ -1,6 +1,7 @@
 
 
 var quiz = {
+    //Default settings
     backend : "http://demosb.spraakdata.gu.se/cgi-bin/korp/korp.cgi",
     params : {
         command: 'query_sample',
@@ -49,20 +50,33 @@ var quiz = {
                 }
             ],
      getNewSentence : function(){
-         
+         var sentences = JSON.parse(localStorage['quiz-sentences']);
+         console.log('left: '+sentences.length);
+         if(sentences.length < 2){
+             this.loadNewSentences();
+         }
+         var num = Math.floor(Math.random()*sentences.length);
+         var random = sentences[num];
+         sentences.splice(num,1);
+         localStorage['quiz-sentences'] = JSON.stringify(sentences);
+         return random;
      },
      loadNewSentences : function(){
          jQuery.ajaxSettings.traditional = true;
          jQuery.ajax({url:this.backend, data:this.params}).done(function(data){
-            var korp_sentence = "";
-            jQuery.each(data.kwic[0].tokens, function(key, val) {
-                if (jQuery.inArray(val.word, this.punct) > -1) korp_sentence += val.word;
-                else korp_sentence += ' ' + val.word;
+            var sentences = Array();
+            jQuery.each(data.kwic, function(i, kwic) {
+                var sentence = "";
+                jQuery.each(kwic.tokens, function(key, val) {
+                    if (jQuery.inArray(val.word, this.punct) > -1) korp_sentence += val.word;
+                    else sentence += ' ' + val.word;
+                });
+                var party = kwic.structs.text_party;
+                var year  = kwic.structs.text_year;
+                sentences.push({s:sentence.trim(),y:year,p:party});
             });
-            var party = data.kwic[0].structs.text_party;
-            var year  = data.kwic[0].structs.text_year;
-            console.log(quiz.partyDict[party]+' '+year);
-            console.log(korp_sentence);
-         })
+            localStorage['quiz-sentences'] = JSON.stringify(sentences);
+            console.log(JSON.parse(localStorage['quiz-sentences']));
+         });
      }
 }
