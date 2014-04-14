@@ -37,7 +37,7 @@ var quiz = {
         "s":    "Socialdemokraterna",
         "v":    "V&auml;nsterpartiet"        
     },
-    presets : [],
+    current : {},
     getNewSentence : function(){
          var sentences = JSON.parse(localStorage['quiz-sentences']);
          console.log('left: '+sentences.length);
@@ -47,6 +47,7 @@ var quiz = {
          var random = Math.floor(Math.random()*sentences.length);
          sentences.splice(random,1);
          localStorage['quiz-sentences'] = JSON.stringify(sentences);
+         quiz.current = sentences[random];
          return sentences[random];
     },
     loadNewSentences : function(callback){

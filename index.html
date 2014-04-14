@@ -14,7 +14,6 @@
         <script src="assets/libs/phonegap-1.4.1.js"></script>
         <script src="assets/libs/jquery.min.js"></script>
         <script src="assets/libs/jquery.mobile-1.4.2/jquery.mobile.custom.min.js"></script>
-        <script src="assets/libs/jquery.shuffle.js"></script>
         
         <!-- mobile theme -->
         <link rel="stylesheet" type="text/css" href="assets/libs/jquery.mobile-1.4.2/jquery.mobile.custom.structure.min.css">
@@ -31,27 +30,32 @@
     <body>
         <div data-role="page">
             <div id="header" data-role="header">
-                <h1>Gissa Parti</h1>
+                <h3 class="ui-bar ui-bar-a">Gissa Parti</h3>
             </div>
-            <div data-role="content">
+            <div role="main" class="ui-content">
                 <div id="start">
-                    <p>
-                        Välj tidsperiod du vill ha slumpade meningar ifrån
-                    </p>
-                    <ul data-role="listview" data-theme="a" id="parties">
-                        <li><a class="ui-btn ui-icon-carat-r ui-btn-icon-left">1887-1930</a></li>
-                        <li><a class="ui-btn ui-icon-carat-r ui-btn-icon-left">1931-1954</a></li>
-                        <li><a class="ui-btn ui-icon-carat-r ui-btn-icon-left">1955-1975</a></li>
-                        <li><a class="ui-btn ui-icon-carat-r ui-btn-icon-left">1975-2014</a></li>
-                    </ul>
+                    <div class="ui-corner-all custom-corners">
+                      <div class="ui-bar ui-bar-a">
+                        <h3>Välj tidsperiod</h3>
+                      </div>
+                      <div class="ui-body ui-body-a">
+                        <ul data-role="listview" data-theme="a" id="parties">
+                            <li><a class="ui-btn ui-icon-carat-r ui-btn-icon-left">1887-1930</a></li>
+                            <li><a class="ui-btn ui-icon-carat-r ui-btn-icon-left">1931-1954</a></li>
+                            <li><a class="ui-btn ui-icon-carat-r ui-btn-icon-left">1955-1975</a></li>
+                            <li><a class="ui-btn ui-icon-carat-r ui-btn-icon-left">1975-2014</a></li>
+                        </ul>
+                      </div>
+                    </div>                    
                 </div>
                 <div id="quiz" style="display: none;">
                     <p id="game-info">Vilket parti kommer denna mening ifrån?</p>
                     <div id="game-content">
                         <p id="random"></p>
+                        <ul id="guessParty" data-role="listview" ></ul>
                         <progress value="1" max="10"></progress>
-                        <ul data-role="listview" data-theme="a" id="parties"></ul>
                     </div>
+                    <a href="#" class="home ui-btn ui-icon-home ui-btn-icon-left">Hem</a>
                     <p id="info"></p>
                 </div>
             </div>
