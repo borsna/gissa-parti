@@ -25,3 +25,7 @@
 #game-footer{
 	position:absolute;bottom:0;
 }
+
+progress{
+    border: 1px solid black;
+}

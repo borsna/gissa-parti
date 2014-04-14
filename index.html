@@ -6,42 +6,58 @@
 **********
 -->
 <html>
-	<head>
-		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-		<meta charset="utf-8" />
-		<title>Gissa Parti</title>
-		<!-- js-libs -->
-		<script src="assets/libs/phonegap-1.4.1.js"></script>
-		<script src="assets/libs/jquery.js"></script>
-		<script src="assets/libs/jquery.shuffle.js"></script>
-		<script src="assets/libs/jquery.mobile-1.0.1/jquery.mobile-1.0.1.min.js"></script>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8" />
+        <title>Gissa Parti</title>
+        <!-- js-libs -->
+        <script src="assets/libs/phonegap-1.4.1.js"></script>
+        <script src="assets/libs/jquery.min.js"></script>
+        <script src="assets/libs/jquery.mobile-1.4.2/jquery.mobile.custom.min.js"></script>
+        <script src="assets/libs/jquery.shuffle.js"></script>
+        
+        <!-- mobile theme -->
+        <link rel="stylesheet" type="text/css" href="assets/libs/jquery.mobile-1.4.2/jquery.mobile.custom.structure.min.css">
+        <link rel="stylesheet" type="text/css" href="assets/libs/jquery.mobile-1.4.2/jquery.mobile.custom.theme.min.css">
+        <link rel="stylesheet" type="text/css" href="assets/libs/jquery.mobile-1.4.2/jquery.mobile.icons.min.css">
 
-		<!-- mobile theme -->
-		<link rel="stylesheet" type="text/css" href="assets/libs/jquery.mobile-1.0.1/jquery.mobile-1.0.1.min.css">
-		<link rel="stylesheet" type="text/css" href="assets/libs/jquery.mobile-1.0.1/jquery.mobile.structure-1.0.1.min.css">
-
-		<!-- game logic -->
-		<script src="assets/js/game.js"></script>
-                <script src="assets/js/quiz.js"></script>
-		<!-- game specific styles-->
-		<link rel="stylesheet" type="text/css" href="assets/css/gissaparti.css">
-	</head>
-		<body>
-		<div data-role="page">
-			<div data-role="header">
-				<h1>Gissa Parti</h1>
-			</div>
-			<div data-role="content">
-				<p id="game-info">Vilket parti kommer denna mening ifrån?</p>
-				<div id="game-content">
-					<p id="random"></p>
-					<ul data-role="listview" data-theme="a" id="parties"></ul>
-				</div>
-				<p id="info"></p>
-			</div>
-			<div data-position="fixed" data-role="footer"> 
-				<h4><strong id="correct">0</strong> rätt, <strong id="wrong">0</strong> fel</h4> 
-			</div> 
-		</div>
-	</body>
+        <!-- game logic -->
+        <script src="assets/js/quiz.js"></script>
+        <script src="assets/js/game.js"></script>
+        
+        <!-- game specific styles-->
+        <link rel="stylesheet" type="text/css" href="assets/css/gissaparti.css">
+    </head>
+    <body>
+        <div data-role="page">
+            <div id="header" data-role="header">
+                <h1>Gissa Parti</h1>
+            </div>
+            <div data-role="content">
+                <div id="start">
+                    <p>
+                        Välj tidsperiod du vill ha slumpade meningar ifrån
+                    </p>
+                    <ul data-role="listview" data-theme="a" id="parties">
+                        <li><a class="ui-btn ui-icon-carat-r ui-btn-icon-left">1887-1930</a></li>
+                        <li><a class="ui-btn ui-icon-carat-r ui-btn-icon-left">1931-1954</a></li>
+                        <li><a class="ui-btn ui-icon-carat-r ui-btn-icon-left">1955-1975</a></li>
+                        <li><a class="ui-btn ui-icon-carat-r ui-btn-icon-left">1975-2014</a></li>
+                    </ul>
+                </div>
+                <div id="quiz" style="display: none;">
+                    <p id="game-info">Vilket parti kommer denna mening ifrån?</p>
+                    <div id="game-content">
+                        <p id="random"></p>
+                        <progress value="1" max="10"></progress>
+                        <ul data-role="listview" data-theme="a" id="parties"></ul>
+                    </div>
+                    <p id="info"></p>
+                </div>
+            </div>
+            <div data-position="fixed" data-role="footer" style="visibility: hidden;"> 
+                <h4><strong id="correct">0</strong> rätt, <strong id="wrong">0</strong> fel</h4> 
+            </div> 
+        </div>
+    </body>
 </html>
