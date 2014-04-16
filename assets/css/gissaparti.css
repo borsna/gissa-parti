@@ -29,3 +29,26 @@
 progress{
     border: 1px solid black;
 }
+
+
+
+.party{
+    height: 26px;
+    background-repeat:no-repeat;
+    text-align:left;
+    padding-left: 49px !important;
+
+}
+
+.m{background-image:url('../img/partisymboler/m.png');}
+.s{background-image:url('../img/partisymboler/s.png');}
+.c{background-image:url('../img/partisymboler/c.png');}
+.v{background-image:url('../img/partisymboler/v.png');}
+.fp{background-image:url('../img/partisymboler/fp.png');}
+.sd{background-image:url('../img/partisymboler/sd.png');}
+.mp{background-image:url('../img/partisymboler/mp.png');}
+.pp{background-image:url('../img/partisymboler/pp.png');}
+.fi{background-image:url('../img/partisymboler/fi.png');}
+.nyd{background-image:url('../img/partisymboler/nyd.png');}
+.kd{background-image:url('../img/partisymboler/kd.png');}
+.all{background-image:url('../img/partisymboler/all.png');}

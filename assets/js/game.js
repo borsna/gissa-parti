@@ -1,13 +1,3 @@
-var current = 0;
-var current_party = {};
-var num_result = 0;
-var correct = 0;
-var wrong = 0;
-
-function generatePartyButtons() {
-
-}
-
 $(document).ready(function() {
 
     //event for time period selection
@@ -50,28 +40,24 @@ function generateButtons() {
 
     list.push(quiz.current.p);
 
-    for (var i = 0; i < 3; i++) {
-        list.push(randomParty());
+    while(list.length <= 3){
+        var p = randomParty();
+        if(jQuery.inArray(p.toString(), list) <= -1){
+            list.push(p.toString());
+        }
     }
 
     list = shuffle(list);
 
-    console.log(list);
     var output = '';
-    $("#parties").html("");
+    $("#guessParty").html("");
     for (var p in list) {
-        console.log(list[p]);
         $.each(quiz.partyDict, function(key, value) {
-            console.log(key + ':'+list[p]);
             if (key == list[p]) {
-                console.log(key + ':' + value);
-                output += '<li><a class="ui-btn" data-value="'+key+'">' + value + '</a></li>';
-                
+                output += '<li><a class="ui-btn party '+key+'" data-value="'+key+'">' + value + '</a></li>';
             }
         });
     }
-    console.log(output)
-    console.log("setting html");
     $("#guessParty").html(output);
 
 }
@@ -86,8 +72,7 @@ function randomParty() {
 }
 
 function shuffle(o) {
-    for (var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x)
-        ;
+    for (var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
     return o;
 }
 
