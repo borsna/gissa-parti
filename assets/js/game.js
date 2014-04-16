@@ -65,9 +65,11 @@ function generateButtons() {
         console.log('gissade på '+p);
         if(p == quiz.current.p){
             $("#guessParty ."+p).addClass('correct');
+            $("#score").append('<li class="'+p+' correct" />');
         }else{
             $("#guessParty ."+p).addClass('wrong');
             $("#guessParty ."+quiz.current.p).stop().addClass('correct', 700);
+            $("#score").append('<li class="'+quiz.current.p+' wrong" />');
         }
         setTimeout(function(){ 
             loadSentence() ; 

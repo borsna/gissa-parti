@@ -35,6 +35,24 @@ progress{
 }
 
 
+#score{
+    list-style-type: none;
+    display:block;
+    clear:both;
+    padding-left: 0px;
+}
+#score li{
+    display:inline;
+    width:47px;
+    height: 47px;
+    float:left;
+    
+    border : 1px solid gray;
+    margin-bottom: 3px;
+    margin-right: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
 
 .party{
     height: 26px;
