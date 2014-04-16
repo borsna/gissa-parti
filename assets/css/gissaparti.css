@@ -22,6 +22,10 @@
 	list-style-type: none;
 }
 
+.home{
+	clear:both;
+}
+
 #parties{margin-top: 5px;}
 
 .correct{background-color:#0acb00 !important;}
