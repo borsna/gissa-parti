@@ -19,6 +19,7 @@
 
 #guessParty, #parties{
     padding-left: 0px;
+	list-style-type: none;
 }
 
 #parties{margin-top: 5px;}

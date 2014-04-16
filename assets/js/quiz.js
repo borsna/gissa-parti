@@ -55,7 +55,7 @@ var quiz = {
     loadNewSentences : function(callback){
          jQuery.ajaxSettings.traditional = true;
          this.params.cqp = '[(int(_.text_datefrom) >= '+this.startYear+'0101 & int(_.text_dateto) <= '+this.endYear+'1231)]';
-         jQuery.ajax({url:this.backend, data:this.params}).done(function(data){
+         jQuery.ajax({url:this.backend, dataType:'jsonp', data:this.params}).done(function(data){
             var sentences = Array();
             jQuery.each(data.kwic, function(i, kwic) {
                 var sentence = "";
