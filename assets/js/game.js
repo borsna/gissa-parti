@@ -59,8 +59,24 @@ function generateButtons() {
         });
     }
     $("#guessParty").html(output);
-
+    $("#guessParty a").on("vclick",function(e){
+        $("#guessParty a").unbind();
+        var p = $(this).attr('data-value');
+        console.log('gissade på '+p);
+        if(p == quiz.current.p){
+            $("#guessParty ."+p).addClass('correct');
+        }else{
+            $("#guessParty ."+p).addClass('wrong');
+            $("#guessParty ."+quiz.current.p).stop().addClass('correct', 700);
+        }
+        setTimeout(function(){ 
+            loadSentence() ; 
+        }, 800);
+        
+    });
 }
+
+
 
 function randomParty() {
     var ret;

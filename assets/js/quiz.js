@@ -40,15 +40,17 @@ var quiz = {
     current : {},
     getNewSentence : function(){
          var sentences = JSON.parse(localStorage['quiz-sentences']);
-         console.log('left: '+sentences.length);
-         if(sentences.length < 2){
-             this.loadNewSentences();
-         }
+         
          var random = Math.floor(Math.random()*sentences.length);
+
+         quiz.current = sentences[random]
          sentences.splice(random,1);
          localStorage['quiz-sentences'] = JSON.stringify(sentences);
-         quiz.current = sentences[random];
-         return sentences[random];
+
+         if(sentences.length < 2){
+             this.loadNewSentences();
+         }         
+         return quiz.current;
     },
     loadNewSentences : function(callback){
          jQuery.ajaxSettings.traditional = true;

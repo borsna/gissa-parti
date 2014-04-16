@@ -17,10 +17,14 @@
 	margin-top: 5px;
 }
 
+#guessParty, #parties{
+    padding-left: 0px;
+}
+
 #parties{margin-top: 5px;}
 
-#correct, .correct{color:green;}
-#wrong, .wrong{color:red;}
+#correct, .correct{background-color:#0acb00 !important;}
+#wrong, .wrong{background-color:#ff4f4f !important;}
 
 #game-footer{
 	position:absolute;bottom:0;
@@ -39,6 +43,7 @@ progress{
     padding-left: 49px !important;
 
 }
+
 
 .m{background-image:url('../img/partisymboler/m.png');}
 .s{background-image:url('../img/partisymboler/s.png');}
