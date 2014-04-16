@@ -23,8 +23,8 @@
 
 #parties{margin-top: 5px;}
 
-#correct, .correct{background-color:#0acb00 !important;}
-#wrong, .wrong{background-color:#ff4f4f !important;}
+.correct{background-color:#0acb00 !important;}
+.wrong{background-color:#ff4f4f !important;}
 
 #game-footer{
 	position:absolute;bottom:0;

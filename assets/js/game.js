@@ -26,6 +26,7 @@ $(document).ready(function() {
         $("#start").show();
         $("#header").show();
         $("#quiz").hide();
+        $("#result").hide();
     });
 });
 
@@ -72,8 +73,19 @@ function generateButtons() {
             $("#guessParty ."+quiz.current.p).stop().addClass('correct', 700);
             $("#score").append('<li class="'+quiz.current.p+' wrong" />');
         }
+        
+
+        
         setTimeout(function(){ 
-            loadSentence() ; 
+            if($("#score li").length == 10){
+                var correct = $("#score li.correct").length;
+                $("#correct").html(correct);
+                $("#quiz").hide();
+                $("#result").show();
+                console.log('antal rätt: '+correct);
+            }else{
+                loadSentence() ;
+            }
         }, 800);
         
     });
