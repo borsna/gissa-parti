@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
     //event for time period selection
     $("#parties a").on("vclick", function(e) {
         var timePeriod = $(this).html().split('-');
@@ -20,7 +19,6 @@ $(document).ready(function() {
         });
     });
 
-
     //go back to home
     $(".home").on("vclick", function(e) {
         $("#start").show();
@@ -32,6 +30,9 @@ $(document).ready(function() {
 
 function loadSentence() {
     var sentence = quiz.getNewSentence();
+    if(sentence.s.length > 150){
+        sentence.s = sentence.s.substr(0,150)+'...';
+    }
     $('#random').html(sentence.s);
     $('#game-content').show("fast");
     generateButtons();
@@ -67,15 +68,14 @@ function generateButtons() {
         console.log('gissade på '+p);
         
         $s = $("#score li:not([class]):first");
+        $s.addClass(p);
         
         if(p == quiz.current.p){
             $("#guessParty ."+p).addClass('correct');
-            $s.addClass(p);
             $s.addClass('correct');
         }else{
             $("#guessParty ."+p).addClass('wrong');
             $("#guessParty ."+quiz.current.p).stop().addClass('correct', 700);
-            $s.addClass(p);
             $s.addClass('wrong');
         }
         
@@ -90,11 +90,8 @@ function generateButtons() {
                 loadSentence() ;
             }
         }, 800);
-        
     });
 }
-
-
 
 function randomParty() {
     var ret;
@@ -108,9 +105,4 @@ function randomParty() {
 function shuffle(o) {
     for (var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
     return o;
-}
-
-// check the answer and get new sentence
-function guessParty(party) {
-
 }
