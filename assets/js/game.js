@@ -10,7 +10,7 @@ $(document).ready(function() {
             textVisible: true,
             textonly: false
         });
-        $("#score").html("");
+        $("#score li").removeClass();
         quiz.loadNewSentences(function() {
             $.mobile.loading("hide");
             loadSentence();
@@ -65,19 +65,22 @@ function generateButtons() {
         $("#guessParty a").unbind();
         var p = $(this).attr('data-value');
         console.log('gissade på '+p);
+        
+        $s = $("#score li:not([class]):first");
+        
         if(p == quiz.current.p){
             $("#guessParty ."+p).addClass('correct');
-            $("#score").append('<li class="'+p+' correct" />');
+            $s.addClass(p);
+            $s.addClass('correct');
         }else{
             $("#guessParty ."+p).addClass('wrong');
             $("#guessParty ."+quiz.current.p).stop().addClass('correct', 700);
-            $("#score").append('<li class="'+quiz.current.p+' wrong" />');
+            $s.addClass(p);
+            $s.addClass('wrong');
         }
         
-
-        
         setTimeout(function(){ 
-            if($("#score li").length == 10){
+            if($("#score li:not([class])").length == 0){
                 var correct = $("#score li.correct").length;
                 $("#correct").html(correct);
                 $("#quiz").hide();

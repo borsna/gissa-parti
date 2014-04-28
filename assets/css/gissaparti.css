@@ -57,6 +57,7 @@ progress{
     margin-right: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
+    background-color: #d6d6d6;
 }
 
 .party{
@@ -66,6 +67,7 @@ progress{
     padding-left: 49px !important;
 
 }
+
 
 
 .m{background-image:url('../img/partisymboler/m.png');}
