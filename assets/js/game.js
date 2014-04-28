@@ -10,7 +10,7 @@ $(document).ready(function() {
             textVisible: true,
             textonly: false
         });
-        $("#score li").removeClass();
+        $("#score li").removeAttr('class');
         quiz.loadNewSentences(function() {
             $.mobile.loading("hide");
             loadSentence();
