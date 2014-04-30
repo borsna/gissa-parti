@@ -30,8 +30,8 @@ $(document).ready(function() {
 
 function loadSentence() {
     var sentence = quiz.getNewSentence();
-    if(sentence.s.length > 150){
-        sentence.s = sentence.s.substr(0,150)+'...';
+    if(sentence.s.length > 210){
+        sentence.s = sentence.s.substr(0,210)+'...';
     }
     $('#random').html(sentence.s);
     $('#game-content').show("fast");
