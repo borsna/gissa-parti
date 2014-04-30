@@ -45,6 +45,7 @@ function generateButtons() {
 
     while(list.length <= 3){
         var p = randomParty();
+        console.log('random party '+p);
         if(jQuery.inArray(p.toString(), list) <= -1){
             list.push(p.toString());
         }
@@ -57,7 +58,7 @@ function generateButtons() {
     for (var p in list) {
         $.each(quiz.partyDict, function(key, value) {
             if (key == list[p]) {
-                output += '<li><a class="ui-btn party '+key+'" data-value="'+key+'">' + value + '</a></li>';
+                output += '<li><a class="ui-btn party '+key+'" data-value="'+key+'">' + value.label + '</a></li>';
             }
         });
     }
@@ -83,6 +84,7 @@ function generateButtons() {
             if($("#score li:not([class])").length == 0){
                 var correct = $("#score li.correct").length;
                 $("#correct").html(correct);
+                $("#total").html($("#score li").length);
                 $("#quiz").hide();
                 $("#result").show();
                 console.log('antal rätt: '+correct);
@@ -96,10 +98,34 @@ function generateButtons() {
 function randomParty() {
     var ret;
     var c = 0;
-    for (var key in quiz.partyDict)
+    
+    var parties = getPartiesBetween(quiz.startYear, quiz.endYear);
+    console.log('parties');
+    console.log(parties);
+    for (var key in parties)
         if (Math.random() < 1 / ++c)
-            ret = key;
+            ret = parties[key];
+        
     return ret;
+}
+
+/*
+ * 
+ * 1935-2014
+ * 1920-1945
+ * 
+ */
+
+function getPartiesBetween(from, to){
+    var result = new Array();
+    for (var key in quiz.partyDict){
+        var f = quiz.partyDict[key].from;
+        var t = quiz.partyDict[key].to;
+        if ((f >= from && t <= to) || (f <= from && t >= from)){
+            result.push(key);
+        }
+    }
+    return result;
 }
 
 function shuffle(o) {

@@ -13,7 +13,7 @@ var quiz = {
     startYear: 1887,
     endYear:2442,
     punct : ['.', ',', '!', '?', ';', '-', '"', '\'', '(', ')'],
-    partyDict : {
+    partyDict__ : {
         "all":  "Alliansen",
         "c":    "Centerpartiet",
         "rg":   "De r&ouml;dgr&ouml;na",
@@ -35,30 +35,30 @@ var quiz = {
         "svp":  "Sverges socialdemokratiska v&auml;nsterparti",
         "lp":   "Sveriges liberala parti",
         "s":    "Socialdemokraterna",
-        "v":    "V&auml;nsterpartiet"        
-    },partyDict2 : {
+        "v":    "Vänsterpartiet"        
+    },partyDict : {
         "all":  {label:"Alliansen",from:2004,to:2014},
         "c":    {label:"Centerpartiet",from:1913,to:2014},
-        "rg":   {label:"De r&ouml;dgr&ouml;na",from:2004,to:2014},
+        "rg":   {label:"De rödgröna",from:2004,to:2014},
         "fi":   {label:"Feministiskt initiativ",from:2005,to:2014},
         "fp":   {label:"Folkpartiet",from:1934,to:2014},
-        "jr":   {label:"Jordbrukarnas riksf&ouml;rbund",from:1915,to:1921},
+        "jr":   {label:"Jordbrukarnas riksförbund",from:1915,to:1921},
         "kd":   {label:"Kristdemokraterna",from:1964,to:2014},
-        "la":   {label:"Lantmannapartiet",from:1920,to:2014},
-        "labp": {label:"Lantmanna- och borgarepartiet",from:1920,to:2014},
-        "lisp": {label:"Liberala samlingspartiet",from:1920,to:2014},
-        "mp":   {label:"Milj&ouml;partiet",from:1981,to:2014},
+        "la":   {label:"Lantmannapartiet",from:1867,to:1912},
+        "labp": {label:"Lantmanna- och borgarepartiet",from:1912,to:1935},
+        "lisp": {label:"Liberala samlingspartiet",from:1900,to:1924},
+        "mp":   {label:"Miljöpartiet",from:1981,to:2014},
         "m":    {label:"Moderaterna",from:1920,to:2014},
-        "npf":  {label:"Nationella framstegspartiet",from:1920,to:2014},
+        "npf":  {label:"Nationella framstegspartiet",from:1906,to:1912},
         "nyd":  {label:"Ny demokrati",from:1991,to:2000},
         "pp":   {label:"Piratpartiet",from:2006,to:2014},
         "sd":   {label:"Sverigedemokraterna",from:1988,to:2014},
-        "k_h":  {label:"Sveriges kommunistiska parti, H&ouml;glundarna",from:1924,to:1926},
+        "k_h":  {label:"Sveriges kommunistiska parti, Höglundarna",from:1924,to:1926},
         "k_k":  {label:"Sverges kommunistiska parti, Kilbommarna",from:1929,to:1948},
-        "svp":  {label:"Sverges socialdemokratiska v&auml;nsterparti",from:1921,to:1926},
-        "lp":   {label:"Sveriges liberala parti",from:1920,to:2014},
+        "svp":  {label:"Sverges socialdemokratiska vänsterparti",from:1921,to:1926},
+        "lp":   {label:"Sveriges liberala parti",from:1923,to:1934},
         "s":    {label:"Socialdemokraterna",from:1920,to:2014},
-        "v":    {label:"V&auml;nsterpartiet",from:1920,to:2014}        
+        "v":    {label:"Vänsterpartiet",from:1920,to:2014}        
     },
     current : {},
     getNewSentence : function(){
