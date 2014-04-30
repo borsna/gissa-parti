@@ -36,9 +36,10 @@
                 <div id="start">
                     <div class="ui-corner-all custom-corners">
                       <div class="ui-bar ui-bar-a">
-                        <h3>Välj tidsperiod</h3>
+                        <h3>Ny omgång</h3>
                       </div>
                       <div class="ui-body ui-body-a">
+                        <p>Välj tidsperiod</p>
                         <ul data-role="listview" data-theme="a" id="parties">
                             <li><a class="ui-btn ui-icon-carat-r ui-btn-icon-left">1887-1930</a></li>
                             <li><a class="ui-btn ui-icon-carat-r ui-btn-icon-left">1931-1954</a></li>
@@ -46,7 +47,8 @@
                             <li><a class="ui-btn ui-icon-carat-r ui-btn-icon-left">1975-2014</a></li>
                         </ul>
                       </div>
-                    </div>                    
+                    </div>
+                   
                 </div>
                 <div id="quiz" style="display: none;">
                     <p id="game-info">Vilket parti kommer denna mening ifrån?</p>
@@ -62,7 +64,14 @@
                     <p id="info"></p>
                 </div>
                 <div id="result" style="display: none;">
-                    Du fick <span id="correct"></span> rätt av <span id="total">10</span>!
+                    <div class="ui-corner-all custom-corners">
+                      <div class="ui-bar ui-bar-a">
+                        <h3>Resultat</h3>
+                      </div>
+                      <div class="ui-body ui-body-a">
+                          <h3>Du fick <span id="correct"></span> rätt av <span id="total">10</span>!</h3>
+                      </div>                    
+                    
                     <a href="#" class="home ui-btn ui-icon-home ui-btn-icon-left">Hem</a>
                 </div>
             </div>

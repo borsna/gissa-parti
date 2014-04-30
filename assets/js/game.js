@@ -69,14 +69,15 @@ function generateButtons() {
         console.log('gissade på '+p);
         
         $s = $("#score li:not([class]):first");
-        $s.addClass(p);
         
         if(p == quiz.current.p){
             $("#guessParty ."+p).addClass('correct');
+            $s.addClass(p);
             $s.addClass('correct');
         }else{
             $("#guessParty ."+p).addClass('wrong');
             $("#guessParty ."+quiz.current.p).stop().addClass('correct', 700);
+            $s.addClass(quiz.current.p);
             $s.addClass('wrong');
         }
         
