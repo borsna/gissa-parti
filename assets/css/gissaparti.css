@@ -1,29 +1,30 @@
 #random{
     color:gray;
     padding:5px;
-	display: block;
+    display: block;
     font-family: Verdana, Arial, Helvetica, sans-serif;
     border:1px solid gray;
     -moz-border-radius: 3px;
-     border-radius: 3px;
+    border-radius: 3px;
 }
 
 #info{
-	display: block;
+    display: block;
 }
 
 #game-info{
-	margin-bottom:5px;
-	margin-top: 5px;
+    margin-bottom:5px;
+    margin-top: 5px;
 }
 
 #guessParty, #parties{
-    padding-left: 0px;
-	list-style-type: none;
+    margin: 1px;
+
+    list-style-type: none;
 }
 
 .home{
-	clear:both;
+    clear:both;
 }
 
 #parties{margin-top: 5px;}
@@ -32,7 +33,7 @@
 .wrong{background-color:#ff4f4f !important;}
 
 #game-footer{
-	position:absolute;bottom:0;
+    position:absolute;bottom:0;
 }
 
 progress{
@@ -51,7 +52,7 @@ progress{
     width:47px;
     height: 47px;
     float:left;
-    
+
     border : 1px solid gray;
     margin-bottom: 3px;
     margin-right: 3px;

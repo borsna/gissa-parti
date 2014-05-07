@@ -58,7 +58,7 @@ function generateButtons() {
     for (var p in list) {
         $.each(quiz.partyDict, function(key, value) {
             if (key == list[p]) {
-                output += '<li><a class="ui-btn party '+key+'" data-value="'+key+'">' + value.label + '</a></li>';
+                output += '<li><a class="ui-shadow ui-btn ui-corner-all party '+key+'" data-value="'+key+'">' + value.label + '</a></li>';
             }
         });
     }
@@ -109,13 +109,6 @@ function randomParty() {
         
     return ret;
 }
-
-/*
- * 
- * 1935-2014
- * 1920-1945
- * 
- */
 
 function getPartiesBetween(from, to){
     var result = new Array();
