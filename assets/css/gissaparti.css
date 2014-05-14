@@ -61,6 +61,10 @@ progress{
     background-color: #d6d6d6;
 }
 
+.score{
+    text-align: right;
+}
+
 .party{
     height: 26px;
     background-repeat:no-repeat;

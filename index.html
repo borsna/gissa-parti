@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <!--
 ******************************************************************
-* GissaParti alfa 0.01
+* GissaParti alfa 0.02
 * 
 **********
 -->
@@ -23,6 +23,7 @@
         <!-- game logic -->
         <script src="assets/js/quiz.js"></script>
         <script src="assets/js/game.js"></script>
+        <script src="assets/js/highscore.js"></script>
         
         <!-- game specific styles-->
         <link rel="stylesheet" type="text/css" href="assets/css/gissaparti.css">
@@ -48,6 +49,17 @@
                         </div>                          
                       </div>
                     </div>
+                    <div class="ui-corner-all custom-corners">
+                      <div class="ui-bar ui-bar-a">
+                        <h3></h3>
+                      </div>                        
+                      <div class="ui-body ui-body-a">
+                        <div class="ui-grid-a">
+                            <div class="ui-block-a"><a href="#" id="highscoreBtn" class="ui-shadow ui-btn ui-corner-all">Highscore</a></div>
+                            <div class="ui-block-b"><a href="#" id="aboutBtn" class="ui-shadow ui-btn ui-corner-all">Om spelet</a></div>
+                        </div>                          
+                      </div>
+                    </div>                    
                    
                 </div>
                 <div id="quiz" style="display: none;">
@@ -70,10 +82,39 @@
                       </div>
                       <div class="ui-body ui-body-a">
                           <h3>Du fick <span id="correct"></span> rätt av <span id="total">10</span>!</h3>
+                          <input type="text" id="name" />
+                          <input type="button" value="Spara" id="saveScoreBtn" class="ui-shadow ui-btn ui-corner-all" />
                       </div>                    
                     
+                      <a href="#" class="home ui-btn ui-icon-home ui-btn-icon-left">Hem</a>
+                    </div>
+                </div>
+                <div id="highscore" style="display: none;">
+                    <table data-role="table" class="ui-body-d ui-shadow table-stripe ui-responsive">
+                        <thead class="ui-bar-d">
+                            <tr>
+                                <th>Poäng</th>
+                                <th>Namn</th>
+                            </tr>
+                        </thead>
+                        <tbody id="highscore-list"></tbody>
+                    </table>
                     <a href="#" class="home ui-btn ui-icon-home ui-btn-icon-left">Hem</a>
                 </div>
+                <div id="about" style="display: none;">
+                    <div class="ui-corner-all custom-corners">
+                      <div class="ui-bar ui-bar-a">
+                        <h3>Om Spelet</h3>
+                      </div>
+                      <div class="ui-body ui-body-a">
+                          <p>Gissa Partiet använder Språkbankens verktyg Korp för att hämta slumpade meningar.</p>
+                          <p>Materialet för manifesten och programmen kommer från Svensk Nationell Datatjänst SND</p>
+                          <img src="assets/img/sb-logo.png" /><img src="assets/img/snd-logo.png" />
+                      </div>                    
+                    
+                      <a href="#" class="home ui-btn ui-icon-home ui-btn-icon-left">Hem</a>
+                    </div>
+                </div>                
             </div>
             <div data-position="fixed" data-role="footer" style="visibility: hidden;"> 
                 <h4><strong id="correct">0</strong> rätt, <strong id="wrong">0</strong> fel</h4> 

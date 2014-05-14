@@ -19,12 +19,39 @@ $(document).ready(function() {
         });
     });
 
+    $("#highscoreBtn").on("vclick", function(e) {
+        var hs = highscore.getHighscores();
+        var output = '';
+        
+        jQuery.each(hs, function(key, h) {
+            output += '<tr><td class="score">'+h.score+'</td><td>'+h.name+'</td></tr>';
+        });
+        console.log(output);
+        $("#highscore-list").html(output);
+        $("#start").hide();
+        $("#highscore").show();
+    });
+    
+    $("#saveScoreBtn").on("vclick", function(e) {
+        highscore.insertHighscore($("#name").val(), $("#correct").html());
+        $("#highscore").hide();
+        $("#start").show();
+        $("#header").show();
+    });   
+    
+    $("#aboutBtn").on("vclick", function(e) {
+        $("#start").hide();
+        $("#about").show();
+    });   
+
     //go back to home
     $(".home").on("vclick", function(e) {
         $("#start").show();
         $("#header").show();
         $("#quiz").hide();
         $("#result").hide();
+        $("#highscore").hide();
+        $("#about").hide();
     });
 });
 
