@@ -34,7 +34,7 @@ $(document).ready(function() {
     
     $("#saveScoreBtn").on("vclick", function(e) {
         highscore.insertHighscore($("#name").val(), $("#correct").html());
-        $("#highscore").hide();
+        $("#result").hide();
         $("#start").show();
         $("#header").show();
     });   
