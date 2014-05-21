@@ -13,6 +13,8 @@ version = "1.0.0">
 	<author href="http://olof.borsna.se" email="borsna@gmail.com">
 	Olof Olsson
 	</author>
+        
+        <preference name="phonegap-version" value="3.1.0" />
 
 	<gap:platforms>
 		<gap:platform name="android" minVersion="2.1" />
