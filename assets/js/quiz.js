@@ -39,13 +39,13 @@ var quiz = {
     },
     current : {},
     getNewSentence : function(){
-         var sentences = JSON.parse(localStorage['quiz-sentences']);
+         var sentences = JSON.parse(window.localStorage['quiz-sentences']);
          
          var random = Math.floor(Math.random()*sentences.length);
 
          quiz.current = sentences[random]
          sentences.splice(random,1);
-         localStorage['quiz-sentences'] = JSON.stringify(sentences);
+         window.localStorage['quiz-sentences'] = JSON.stringify(sentences);
 
          if(sentences.length < 2){
              this.loadNewSentences();
@@ -69,8 +69,8 @@ var quiz = {
                 });
                 sentences.push({s:sentence.trim(),y:kwic.structs.text_year,p:kwic.structs.text_party});
             });
-            localStorage['quiz-sentences'] = JSON.stringify(sentences);
-            console.log(JSON.parse(localStorage['quiz-sentences']));
+            window.localStorage['quiz-sentences'] = JSON.stringify(sentences);
+            console.log(JSON.parse(window.localStorage['quiz-sentences']));
             if (callback && typeof(callback) === "function") {
               callback();
             }            
