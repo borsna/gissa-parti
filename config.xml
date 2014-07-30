@@ -29,6 +29,11 @@ version = "1.0.0">
 	-->
 	
 	<icon src="assets/img/icon.png" gap:role="default" />
-
+        <icon src="assets/img/icon-mdpi.png" platform="android" width="48" height="48" density="mdpi" />
+        <icon src="assets/img/icon-hdpi.png" platform="android" width="72" height="72" density="hdpi" />
+        <icon src="assets/img/icon-xhdpi.png" platform="android" width="96" height="96" density="xhdpi" />
+        <icon src="assets/img/icon-xxhdpi.png" platform="android" width="144" height="144" density="xxhdpi" />
+        <icon src="assets/img/icon-xxxhdpi.png" platform="android" width="192" height="192" density="xxxhdpi" />
+        
 	<feature name="http://api.phonegap.com/1.0/network"/>
 </widget>
