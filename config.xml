@@ -23,10 +23,6 @@ version = "1.0.0">
 		<gap:platform name="symbian.wrt" />
 		<gap:platform name="blackberry" project="widgets"/>
 	</gap:platforms>
-
-	<!--
-	<gap:splash src="assets/img/splash.png" width="100" height="100" />
-	-->
 	
 	<icon src="assets/img/icon.png" gap:role="default" />
         <icon src="assets/img/icon-mdpi.png" platform="android" width="48" height="48" density="mdpi" />
