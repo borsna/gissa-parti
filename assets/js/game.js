@@ -23,9 +23,13 @@ $(document).ready(function() {
         var hs = highscore.getHighscores();
         var output = '';
         
+        if(hs.length != 0){
         jQuery.each(hs, function(key, h) {
             output += '<tr><td class="score">'+h.score+'</td><td>'+h.name+'</td></tr>';
         });
+        } else {
+            output = '<p>Inga highscore, spela en runda</p>';
+        }
         console.log(output);
         $("#highscore-list").html(output);
         $("#start").hide();
