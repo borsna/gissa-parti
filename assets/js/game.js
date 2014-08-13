@@ -19,7 +19,7 @@ $(document).ready(function() {
         });
     });
 
-    $("#highscoreBtn").on("vclick", function(e) {
+    $("#highscoreBtn").on("click", function(e) {
         var hs = highscore.getHighscores();
         var output = '';
         
@@ -32,20 +32,20 @@ $(document).ready(function() {
         $("#highscore").show();
     });
     
-    $("#saveScoreBtn").on("vclick", function(e) {
+    $("#saveScoreBtn").on("click", function(e) {
         highscore.insertHighscore($("#name").val(), $("#correct").html());
         $("#result").hide();
         $("#start").show();
         $("#header").show();
     });   
     
-    $("#aboutBtn").on("vclick", function(e) {
+    $("#aboutBtn").on("click", function(e) {
         $("#start").hide();
         $("#about").show();
     });   
 
     //go back to home
-    $(".home").on("vclick", function(e) {
+    $(".home").on("click", function(e) {
         $("#start").show();
         $("#header").show();
         $("#quiz").hide();
