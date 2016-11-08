@@ -1,6 +1,6 @@
 var quiz = {
     //Default settings
-    backend : "http://spraakbanken.gu.se/ws/korp?",
+    backend : "https://spraakbanken.gu.se/ws/korp?",
     params : {
         command: 'query_sample',
         corpus: 'VIVILL',
